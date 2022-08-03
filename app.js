@@ -6,7 +6,7 @@ const Employee1={
     fullName:"Ghazi Samer",
     Department :"Administration",
     "Image URL":"https://cute1.cc/wp-content/uploads/2016/08/20160819-3487.jpg",
-    Level:"Senior",
+    Level:"senuir",
     salary :0,
     uniqueId: function (counter){
            
@@ -37,7 +37,7 @@ const Employee2={
     fullName:"Lana Ali",
     Department :"Finance",
     "Image URL":"https://mrahkat.net/wp-content/uploads/2019/12/6954-3.jpg",
-    Level:"Senior",
+    Level:
     salary : 2000,
     uniqueId: function (counter){
            
