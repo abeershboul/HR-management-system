@@ -2,29 +2,34 @@
 var Id=999;
 
 const Employee1={
-    EmployeeID:1000,
+    EmployeeID:0,
     fullName:"Ghazi Samer",
     Department :"Administration",
     "Image URL":"https://cute1.cc/wp-content/uploads/2016/08/20160819-3487.jpg",
     Level:"Senior",
-    uniqueId: function (){
-           let S = Id++;
-            this.EmployeeID=S;
-
+    salary :0,
+    uniqueId: function (counter){
+           
+            this.EmployeeID=counter+1;
+            console.log("EmployeeID----"+this.EmployeeID)
+++Id;
         },
-        getRandomSenior: function(min, max) {
-            let salary= Math.floor(Math.random() * (max - min) + min);
+        getRandomSenior: function() {
+            let salary= Math.floor(Math.random() * (2000 - 1500) + 1500);
             let netSalary=salary-(salary*0.075);
-            console.log(salary);
-           // console.log(netSalary);
+            this.salary=netSalary;
+            
+            console.log("Employee Name  "+this.fullName)
+            console.log("salary   "+salary);
+           
           }
 };
-function r(){
-    const val = Math.floor(1000 + Math.random() * 9000);
+Employee1.uniqueId(Id);
 
-Employee1.EmployeeID=val;
-}
-r();
+Employee1.getRandomSenior();
+
+
+
 
 
 const Employee2={
@@ -33,23 +38,29 @@ const Employee2={
     Department :"Finance",
     "Image URL":"https://mrahkat.net/wp-content/uploads/2019/12/6954-3.jpg",
     Level:"Senior",
-    uniqueId: function (){
-        var count;
-        console.count();
-        } ,
-    getRandomSenior: function(min, max) {
-        let salary= Math.floor(Math.random() * (max - min) + min);
+    salary : 2000,
+    uniqueId: function (counter){
+           
+        this.EmployeeID=counter+1;
+++Id;
+console.log("EmployeeID----"+this.EmployeeID)
+    },
+    getRandomSenior: function() {
+        let salary= Math.floor(Math.random() * (2000 - 1500) + 1500);
         let netSalary=salary-(salary*0.075);
-            console.log(salary);
-            //console.log(netSalary);        
-        }
+        this.salary=netSalary;
+        console.log("Employee Name  "+this.fullName)
+        console.log("salary   "+salary);
+       
+      }
 };
-function s(){
-    const val = Math.floor(1000 + Math.random() * 9000);
 
-Employee2.EmployeeID=val;
-}
-s();
+
+Employee2.uniqueId(Id);
+Employee2.getRandomSenior();
+
+
+
 
 const Employee3={
     EmployeeID:1002,
@@ -57,22 +68,26 @@ const Employee3={
     Department :"Marketing",
     "Image URL":"https://new3.co/wp-content/uploads/2018/01/1883-6.jpg",
     Level:"Senior",
-    uniqueId: function (){
-        var count;
-        console.count();
-        },
-    getRandomSenior: function(min, max) {
-        let salary= Math.floor(Math.random() * (max - min) + min);
+    salary :2000,
+    uniqueId: function (counter){
+           
+        this.EmployeeID=counter+1;
+++Id;
+console.log("EmployeeID----"+this.EmployeeID)
+    },
+    getRandomSenior: function() {
+        let salary= Math.floor(Math.random() * (2000 - 1500) + 1500);
         let netSalary=salary-(salary*0.075);
-        console.log(salary);
-        //console.log(netSalary);        
-    } 
+        this.salary=netSalary;
+        console.log("Employee Name  "+this.fullName)
+        console.log("salary   "+salary);
+       
+      }
 };
-function b(){
-    const val = Math.floor(1000 + Math.random() * 9000);
-Employee3.EmployeeID=val;
-}
-b();
+
+
+Employee3.uniqueId(Id);
+Employee3.getRandomSenior();
 
 const Employee4={
     EmployeeID:1003,
@@ -80,23 +95,26 @@ const Employee4={
     Department :"Administration",
     Level:"Mid-Senior",
     "Image URL":"https://eveningg.cc/wp-content/uploads/2019/06/11450-6.jpg",
-    uniqueId: function (){
-        var count;
-        console.count();
-        } ,
+    salary : 1500,
+    uniqueId: function (counter){
+           
+        this.EmployeeID=counter+1;
+++Id;
+console.log("EmployeeID----"+this.EmployeeID)
+    },
 
-        getRandomMidSenior: function(min, max) {
-            let salary= Math.floor(Math.random() * (max - min) + min);
-            let netSalary=salary-(salary*0.075);
-            console.log(salary);
-            //console.log(netSalary);        
-          }
+    getRandomSenior: function() {
+        let salary= Math.floor(Math.random() * (1500 - 1000) + 1000);
+        let netSalary=salary-(salary*0.075);
+        this.salary=netSalary;
+        console.log("Employee Name  "+this.fullName)
+        console.log("salary   "+salary);
+       
+      }
 };
-function c(){
-    const val = Math.floor(1000 + Math.random() * 9000);
-Employee4.EmployeeID=val;
-}
-c();
+
+Employee4.uniqueId(Id);
+Employee4.getRandomSenior();
 
 const Employee5={
     EmployeeID:1004,
@@ -104,98 +122,80 @@ const Employee5={
     Department :"Development",
     "Image URL":"https://www.nawa3em.com/big/romance10-17-8-2014.jpg",
     Level:"Senior",
-    uniqueId: function (){
-        var count;
-        console.count();
-        } 
+    salary:2000,
+    uniqueId: function (counter){
+           
+        this.EmployeeID=counter+1;
+++Id;
+console.log("EmployeeID----"+this.EmployeeID)
+    },
 
-        ,
-
-    getRandomSenior: function(min, max) {
-        let salary= Math.floor(Math.random() * (max - min) + min);
+    getRandomSenior: function() {
+        let salary= Math.floor(Math.random() * (2000 - 1500) + 1500);
         let netSalary=salary-(salary*0.075);
-        console.log(salary);
-       // console.log(netSalary);        
+        this.salary=netSalary;
+        console.log("Employee Name  "+this.fullName)
+        console.log("salary   "+salary);
+       
       }
 };
+Employee5.uniqueId(Id);
+Employee5.getRandomSenior();
 
-function f(){
-    const val = Math.floor(1000 + Math.random() * 9000);
-Employee5.EmployeeID=val;
-}
-f();
+
 const Employee6={
     EmployeeID:1005,
     fullName:"Rana Saleh",
     Department :"Development",
     "Image URL":"https://mrahkat.net/wp-content/uploads/2019/12/6954-6.jpg",
     Level:"junior",
-    uniqueId: function (){
-        var count;
-        console.count();
-        } ,
+    salary:1000,
+    uniqueId: function (counter){
+           
+        this.EmployeeID=counter+1;
+++Id;
+console.log("EmployeeID----"+this.EmployeeID)
+    },
 
-        getRandomjunior: function(min, max) {
-            let salary= Math.floor(Math.random() * (max - min) + min);
-            let netSalary=salary-(salary*.075);
-            console.log(salary);
-            //console.log(netSalary);  
-         }   
+    getRandomSenior: function() {
+        let salary= Math.floor(Math.random() * (1000 - 500) + 500);
+        let netSalary=salary-(salary*0.075);
+        this.salary=netSalary;
+        console.log("Employee Name  "+this.fullName)
+        console.log("salary   "+salary);
+       
+      }  
 };
-function g(){
-    const val = Math.floor(1000 + Math.random() * 9000);
-Employee6.EmployeeID=val;
-}
-g();
+Employee6.uniqueId(Id);
+Employee6.getRandomSenior();
+
 
 const Employee7={
     EmployeeID:1006,
     fullName:"Hadi Ahmad",
     Department :"Finance",
     Level:"Mid-Senior",
+    salary:1500,
     "Image URL":"https://media.linkonlineworld.com/img/large/2017/11/18/2017_11_18_13_38_40_513.jpg",
-    uniqueId: function (){
-        var count;
-        console.count();
-        } ,
+    uniqueId: function (counter){
+           
+        this.EmployeeID=counter+1;
+++Id;
+console.log("EmployeeID----"+this.EmployeeID)
+    },
 
-        getRandomMidSenior: function(min, max) {
-            let salary= Math.floor(Math.random() * (max - min) + min);
-            let netSalary=salary-(salary*0.075);
-            console.log(salary);
-            //console.log(netSalary);       
-          }
+    getRandomSenior: function() {
+        let salary= Math.floor(Math.random() * (1500 - 1000) + 1000);
+        let netSalary=salary-(salary*0.075);
+        this.salary=netSalary;
+        console.log("Employee Name  "+this.fullName)
+        console.log("salary   "+salary);
+       
+      }
     
 };
-function l(){
-    const val = Math.floor(1000 + Math.random() * 9000);
-Employee7.EmployeeID=val;
-}
-l();
-
- var Array=[Employee1,Employee2,Employee3,Employee4,Employee5,Employee6,Employee7];
-
-
-
-      function salary(){
-        for(let i=0; i<Array.length;i++){
-            
-            if(Array[i]["Level"] === "Senior"){
-                console.log(Array[i]["fullName"]);
-                Array[i]["getRandomSenior"](1500,2000);
-            
-        }else if(Array[i]["Level"]==="Mid-Senior"){
-            console.log(Array[i]["fullName"]);
-            Array[i]["getRandomMidSenior"](1000,1500);
-
-        }else if(Array[i]["Level"]==="junior"){
-            console.log(Array[i]["fullName"]);
-            Array[i]["getRandomjunior"](500,1000);
-        }
-      }}
-
-      
-      salary();
-      
+Employee7.uniqueId(Id);
+Employee7.getRandomSenior();
+     
  
 
