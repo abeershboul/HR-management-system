@@ -1,5 +1,8 @@
 'use strict';
 let Id =999;
+const body = document.getElementsByName('body');
+
+
 const arr =[];
 
 function EmployeeInfo(EmployeeId,Name,Department,imge,Level,salary){
@@ -37,8 +40,26 @@ arr.push(this);
 
 
 EmployeeInfo.prototype.render= function(){
-document.write(`<p> Employee Name : ${this.Name} <br>Department :  ${this.Department} <br>Employee Salary : ${this.salary} jd</p>`);
 
+
+
+const divel = document.createElement('div');
+body[0].appendChild(divel);
+
+const imgel = document.createElement('img');
+imgel.src=this.imge;
+divel[0].appendChild(imgel);
+
+const p1 = document.createElement('p');
+
+p1.textContent=`Employee Name : ${this.Name}-ID: ${this.EmployeeId}`;
+divel[0].appendChild(p1);
+
+const p2 = document.createElement('p');
+p2.textContent=`Dep2ratment: ${this.Department} -Level: ${this.Level}`;
+divel[0].appendChild(p2);
+
+divel[0].style.backgroundColor="green";
 
 
 };
@@ -51,15 +72,15 @@ document.write(`<p> Employee Name : ${this.Name} <br>Department :  ${this.Depart
 
 
 
-let Employee1 = new EmployeeInfo(1000,"Ghazi Samer","Administration","https://cute1.cc/wp-content/uploads/2016/08/20160819-3487.jpg","Senior",
+let Employee1 = new EmployeeInfo(1000,"Ghazi Samer","Administration","/home/abeer/HR-management-system/poto/Ghazi.jpg","Senior",
 0
 );
-let Employee2= new EmployeeInfo(1001,"Lana Ali","Finance","https://mrahkat.net/wp-content/uploads/2019/12/6954-3.jpg","Senior",2000);
-let Employee3=new EmployeeInfo(1002,"Tamara Ayoub","https://new3.co/wp-content/uploads/2018/01/1883-6.jpg","Senior",2000);
-let Employee4= new EmployeeInfo(1003,"Safi Walid","Administration","https://eveningg.cc/wp-content/uploads/2019/06/11450-6.jpg","Mid-Senior",1500);
-let Employee5= new EmployeeInfo(1004,"Omar Zaid","Development","https://www.nawa3em.com/big/romance10-17-8-2014.jpg","Senior",2000);
-let Employee6= new EmployeeInfo(1005,"Rana Saleh","Development","https://mrahkat.net/wp-content/uploads/2019/12/6954-6.jpg","junior",1000);
-let Employee7= new EmployeeInfo(1006,"Hadi Ahmad","Finance","https://media.linkonlineworld.com/img/large/2017/11/18/2017_11_18_13_38_40_513.jpg","Mid-Senior",1500);
+let Employee2= new EmployeeInfo(1001,"Lana Ali","Finance","./Lana.png","Senior",2000);
+let Employee3=new EmployeeInfo(1002,"Tamara Ayoub","poto/Tamara.jpg","Senior",2000);
+let Employee4= new EmployeeInfo(1003,"Safi Walid","Administration","/home/abeer/HR-management-system/poto/Safi.jpg","Mid-Senior",1500);
+let Employee5= new EmployeeInfo(1004,"Omar Zaid","Development","/home/abeer/HR-management-system/poto/Omar.jpg","Senior",2000);
+let Employee6= new EmployeeInfo(1005,"Rana Saleh","Development","/home/abeer/HR-management-system/poto/Rana.jpg","junior",1000);
+let Employee7= new EmployeeInfo(1006,"Hadi Ahmad","Finance","/home/abeer/HR-management-system/poto/Hadi.jpg","Mid-Senior",1500);
 
 Employee1.uniqueId(Id);
 Employee1.getRandomsalary(2000,1500);
