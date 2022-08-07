@@ -1,6 +1,6 @@
 'use strict';
 let Id =999;
-const body = document.getElementsByName('body');
+const body = document.getElementsByClassName('body1');
 
 
 const arr =[];
@@ -43,23 +43,35 @@ EmployeeInfo.prototype.render= function(){
 
 
 
-const divel = document.createElement('div');
-body[0].appendChild(divel);
+  const divel = document.getElementsByClassName('cardcontant');
+
+//body[0].appendChild(divel);
+const dive0l = document.getElementsByClassName('card');
 
 const imgel = document.createElement('img');
 imgel.src=this.imge;
 divel[0].appendChild(imgel);
+imgel.style.width='200px'
+imgel.style.flexDirection="row";
+
 
 const p1 = document.createElement('p');
 
 p1.textContent=`Employee Name : ${this.Name}-ID: ${this.EmployeeId}`;
 divel[0].appendChild(p1);
+//p1.style.display="flex";
+p1.style.flexDirection="row";
+
 
 const p2 = document.createElement('p');
-p2.textContent=`Dep2ratment: ${this.Department} -Level: ${this.Level}`;
+p2.textContent=`Deparatment: ${this.Department} -Level: ${this.Level}`;
 divel[0].appendChild(p2);
+p1.style.color="white";
+p2.style.color="white";
+p2.style.flexDirection="row";
 
 divel[0].style.backgroundColor="green";
+
 
 
 };
@@ -72,15 +84,13 @@ divel[0].style.backgroundColor="green";
 
 
 
-let Employee1 = new EmployeeInfo(1000,"Ghazi Samer","Administration","/home/abeer/HR-management-system/poto/Ghazi.jpg","Senior",
-0
-);
-let Employee2= new EmployeeInfo(1001,"Lana Ali","Finance","./Lana.png","Senior",2000);
-let Employee3=new EmployeeInfo(1002,"Tamara Ayoub","poto/Tamara.jpg","Senior",2000);
-let Employee4= new EmployeeInfo(1003,"Safi Walid","Administration","/home/abeer/HR-management-system/poto/Safi.jpg","Mid-Senior",1500);
-let Employee5= new EmployeeInfo(1004,"Omar Zaid","Development","/home/abeer/HR-management-system/poto/Omar.jpg","Senior",2000);
-let Employee6= new EmployeeInfo(1005,"Rana Saleh","Development","/home/abeer/HR-management-system/poto/Rana.jpg","junior",1000);
-let Employee7= new EmployeeInfo(1006,"Hadi Ahmad","Finance","/home/abeer/HR-management-system/poto/Hadi.jpg","Mid-Senior",1500);
+let Employee1 = new EmployeeInfo(1000,"Ghazi Samer","Administration","./assests/Ghazi.jpg","Senior",0);
+let Employee2= new EmployeeInfo(1001,"Lana Ali","Finance","./assests/Lana.jpg","Senior",2000);
+let Employee3=new EmployeeInfo(1002,"Tamara Ayoub","Marketing","./assests/Tamara.jpg","Senior",2000);
+let Employee4= new EmployeeInfo(1003,"Safi Walid","Administration","./assests/Safi.jpg","Mid-Senior",1500);
+let Employee5= new EmployeeInfo(1004,"Omar Zaid","Development","./assests/Omar.jpg","Senior",2000);
+let Employee6= new EmployeeInfo(1005,"Rana Saleh","Development","./assests/Rana.jpg","junior",1000);
+let Employee7= new EmployeeInfo(1006,"Hadi Ahmad","Finance","./assests/Hadi.jpg","Mid-Senior",1500);
 
 Employee1.uniqueId(Id);
 Employee1.getRandomsalary(2000,1500);
