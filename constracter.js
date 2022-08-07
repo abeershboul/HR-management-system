@@ -1,121 +1,90 @@
 'use strict';
-let Id =999;
-const body = document.getElementsByClassName('body1');
+let body1=document.getElementsByClassName('body1');
 
+var Id=999;//(counter)
+        const allEmployees=[];
+        function Employees(EmployeeID,fullName,Department,ImageURL,Level,salary)
+        {
+            this.EmployeeID=EmployeeID;
+            this.fullName=fullName;
+            this.Department=Department;
+            this.ImageURL=ImageURL;
+            this.Level=Level;
+            this.salary=salary;
+            this.uniqueId=function(counter){
+                this.EmployeeID=counter +1;
+                    ++Id;
 
-const arr =[];
+            };
+            this.getRandomSenior=function(min,max) {
+                    let salary= Math.floor(Math.random() * (max - min) + min);
+                    let netSalary=Math.floor(salary-(salary*0.075));
+                    this.salary=netSalary;
+                      
+                };
 
-function EmployeeInfo(EmployeeId,Name,Department,imge,Level,salary){
-this.Name=Name;
-this.EmployeeId=EmployeeId;
-this.Department=Department;
-this.Level=Level;
-this.imge=imge;
-this.salary=salary;
+            allEmployees.push(this);
+        }       
+            const Employee1 =new Employees(0,"Ghazi Samer","Administration","./assests/Ghazi.jpg","Senior",0);
+            const Employee2 =new Employees(0,"Lana Ali","Finance","././assests/Lana.jpg","Senior",0);
+            const Employee3 =new Employees(0,"Tamara Ayoub","Marketing","./assests/Tamara.jpg","Senior",0);
+            const Employee4 =new Employees(0,"Safi Walid","Administration","./assests/Safi.jpg","Mid-Senior",0);
+            const Employee5 =new Employees(0,"Omar Zaid","Development","./assests/Omar.jpg","Senior",0);
+            const Employee6 =new Employees(0,"Rana Saleh","Development","./assests/Rana.jpg","junior",0);
+            const Employee7 =new Employees(0,"Hadi Ahmad","Finance","./assests/Hadi.jpg","Mid-Senior",0);
 
-this.uniqueId=function (counter){
+            //console.log(document);
+            //console.log(allEmployees);
+
+           Employees.prototype.render=function(x){
+
            
-    this.EmployeeId=counter+1;
-  
-++Id;
-};
-this.getRandomsalary=function(max,min) {
-    let salary= Math.floor(Math.random() * (max - min) + min);
-    let netSalary=salary-(salary*0.075);
-    this.salary=netSalary;
-    
-    //console.log("Employee Name  "+this.fullName)
-    //console.log("salary   "+salary);
-   
-  };
-
-
-
-arr.push(this);
-
-
-};
-//console.log(arr);
-
-
-
-EmployeeInfo.prototype.render= function(){
-
-
-
-  const divel = document.getElementsByClassName('cardcontant');
-
-//body[0].appendChild(divel);
-const dive0l = document.getElementsByClassName('card');
-
-const imgel = document.createElement('img');
-imgel.src=this.imge;
-divel[0].appendChild(imgel);
-imgel.style.width='200px'
-imgel.style.flexDirection="row";
-
-
-const p1 = document.createElement('p');
-
-p1.textContent=`Employee Name : ${this.Name}-ID: ${this.EmployeeId}`;
-divel[0].appendChild(p1);
-//p1.style.display="flex";
-p1.style.flexDirection="row";
-
-
-const p2 = document.createElement('p');
-p2.textContent=`Deparatment: ${this.Department} -Level: ${this.Level}`;
-divel[0].appendChild(p2);
-p1.style.color="white";
-p2.style.color="white";
-p2.style.flexDirection="row";
-
-divel[0].style.backgroundColor="green";
-
-
-
-};
-
-
-
-
-
-
-
-
-
-let Employee1 = new EmployeeInfo(1000,"Ghazi Samer","Administration","./assests/Ghazi.jpg","Senior",0);
-let Employee2= new EmployeeInfo(1001,"Lana Ali","Finance","./assests/Lana.jpg","Senior",2000);
-let Employee3=new EmployeeInfo(1002,"Tamara Ayoub","Marketing","./assests/Tamara.jpg","Senior",2000);
-let Employee4= new EmployeeInfo(1003,"Safi Walid","Administration","./assests/Safi.jpg","Mid-Senior",1500);
-let Employee5= new EmployeeInfo(1004,"Omar Zaid","Development","./assests/Omar.jpg","Senior",2000);
-let Employee6= new EmployeeInfo(1005,"Rana Saleh","Development","./assests/Rana.jpg","junior",1000);
-let Employee7= new EmployeeInfo(1006,"Hadi Ahmad","Finance","./assests/Hadi.jpg","Mid-Senior",1500);
-
-Employee1.uniqueId(Id);
-Employee1.getRandomsalary(2000,1500);
-Employee2.uniqueId(Id);
-Employee2.getRandomsalary(2000,1500);
-Employee3.uniqueId(Id);
-Employee3.getRandomsalary(2000,1500);
-Employee4.uniqueId(Id);
-Employee4.getRandomsalary(1500,1000);
-Employee5.uniqueId(Id);
-Employee5.getRandomsalary(2000,1500);
-Employee6.uniqueId(Id);
-Employee6.getRandomsalary(1000,500);
-Employee7.uniqueId(Id);
-Employee7.getRandomsalary(1500,1000);
-
-
-
-
-
-
-Employee1.render();
-Employee2.render();
-Employee3.render();
-Employee4.render();
-Employee5.render();
-Employee6.render();
-Employee7.render();
+            let div1=document.getElementsByClassName('div1');
+            let div2=document.getElementsByClassName('div2');
+            div1[0].style.display="flex";
+           let pE1=document.createElement('p');
+           let pE2=document.createElement('p');
+           let pE3=document.createElement('p');
+           let pE4=document.createElement('p');
+           pE1.textContent=`Name: ${this.fullName}  ,  ID:${this.EmployeeID}   `;
+           pE2.textContent=`  Department : ${this.Department}  `;
+            pE3.textContent=`Level :${this.Level}  `;
+            pE4.textContent=`salary : ${this.salary}  `;
+           
+            console.log(pE1);
+            const img1=document.createElement('img');
+            img1.src=this.ImageURL;
+            img1.alt=this.fullName;
+            img1.style.width="20%";
+            
+            pE1.style.color="blue";
+            div2[x].appendChild(img1);
+            div2[x].appendChild(pE1);
+            div2[x].appendChild(pE2);
+            div2[x].appendChild(pE3);
+            div2[x].appendChild(pE4);
+           
+            
+            img1.style.maxWidth="70px";
+            img1.style.height="auto";
+            pE1.style.color="white";
+            pE2.style.color="white";
+            pE3.style.color="white";
+            pE4.style.color="white";
+        
+            }
+       
+                
+      
+           function print(){
+                for(let i =0;i<allEmployees.length;i++){
+                 allEmployees[i].uniqueId(Id);
+                  if(allEmployees[i].Level==="Senior"){
+                    allEmployees[i].getRandomSenior(1500,2000);
+                  } else if(allEmployees[i].Level==="Mid-Senior")
+                  {allEmployees[i].getRandomSenior(1000,1500);}
+                  else{allEmployees[i].getRandomSenior(500,1000);}     
+                allEmployees[i].render(i);
+            }
+        }
+        print();
